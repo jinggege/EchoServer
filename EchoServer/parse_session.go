@@ -28,6 +28,7 @@ func ParseSession(conn net.Conn, exitChan chan int) {
 		}
 		str = "[replay]:" + strings.TrimSpace(str)
 		conn.Write([]byte(str + "\r\n"))
+		conn.Write([]byte(Prompt))
 	}
 
 }

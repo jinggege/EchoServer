@@ -27,6 +27,8 @@ func (ts *TelnetService) Run(address string, exitChan chan int) {
 			continue
 		}
 
+		conn.Write([]byte(Prompt))
+
 		go ParseSession(conn, exitChan)
 	}
 

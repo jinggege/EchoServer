@@ -7,7 +7,7 @@ import (
 
 func TelnetCmd(str string, exitChan chan int) bool {
 
-	if strings.HasPrefix(str, "@close") {
+	if strings.HasPrefix(str, CloseCmdStr) {
 		fmt.Println("=service will close")
 		exitChan <- 0
 		return false
